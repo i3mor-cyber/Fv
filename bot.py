@@ -15,7 +15,7 @@ from telegram.ext import (
 )
 
 TOKEN = os.getenv("TOKEN")
-ADMIN_ID = 6791241030   # 🔴 ضع ID حسابك هنا
+ADMIN_ID = 6791241030
 
 DATA_FILE = "data.json"
 
@@ -84,4 +84,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_data()
         await query.edit_message_text("🗑️ تم مسح القروبات الهدف")
 
-    elif query.data ==
+
+    elif query.data == "add_source":
+    await query.edit_message_text("أرسل معرف القناة المصدر")
