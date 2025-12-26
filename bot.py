@@ -72,18 +72,14 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     if query.data == "add_source":
-        waiting_for = "source"
-        await query.edit_message_text("📥 رد على رسالة من قروب المصدر")
+    waiting_for = "source"
+    await query.edit_message_text("📥 أرسل معرف القناة المصدر")
 
-    elif query.data == "add_target":
-        waiting_for = "target"
-        await query.edit_message_text("📤 رد على رسالة من قروب الهدف")
+elif query.data == "add_target":
+    waiting_for = "target"
+    await query.edit_message_text("📤 أرسل معرف القناة الهدف")
 
-    elif query.data == "clear_targets":
-        data["targets"] = []
-        save_data()
-        await query.edit_message_text("🗑️ تم مسح القروبات الهدف")
-
-
-    elif query.data == "add_source":
-    await query.edit_message_text("أرسل معرف القناة المصدر")
+elif query.data == "clear_targets":
+    data["targets"] = []
+    save_data()
+    await query.edit_message_text("🗑️ تم حذف جميع الأهداف")
